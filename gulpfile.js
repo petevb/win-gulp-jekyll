@@ -17,3 +17,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('default', ['build', 'serve']);
+
+gulp.task('test', () => {
+    console.log("gulp script running");
+});

@@ -1,5 +1,13 @@
 @if "%SCM_TRACE_LEVEL%" NEQ "4" @echo off
 
+REM Check for existing Ruby installation
+where ruby 2>nul >nul
+IF %ERRORLEVEL% EQU 0 (
+    echo Found Ruby - NB Need at least 2.3.1
+    ruby -v
+    goto end
+)
+
 REM Put Ruby in Path
 REM You can also use %TEMP% but it is cleared on site restart. Tools is persistent.
 SET PATH=%PATH%;D:\home\site\deployments\tools\r\ruby-2.3.1-x64-mingw32\bin
